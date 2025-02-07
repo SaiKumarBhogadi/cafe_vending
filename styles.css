@@ -33,13 +33,18 @@ body {
     font-size: 1.1rem;
     position: relative;
     transition: 0.3s;
-    padding-left: 25px;
+    padding-left: 30px !important;
 }
-
+@media (min-width:1139px) and (max-width:1237px){
+    .nav-link{
+        padding-left: 20px;
+        padding-right: 0 !important;
+    }
+}
 .nav-link::before {
     content: '→';
     position: absolute;
-    left: 0;
+    left: 10px;
     transition: 0.3s;
     opacity: 0;
 }
@@ -75,7 +80,7 @@ body {
     background: #cc0000;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
 }
-@media (max-width: 991px) {
+@media (max-width: 1116px) {
     .desktop-nav {
         display: none;
     }
@@ -86,9 +91,14 @@ body {
         padding: 10px 20px;
     }
 }
-@media (min-width: 992px) {
+@media (min-width: 1116px) {
     .mobile-nav {
         display: none;
+    }
+}
+@media (max-width:425px){
+    .logo-name{
+        display: none !important;
     }
 }
 /* Mobile Offcanvas Menu */
@@ -394,6 +404,28 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
+@media (min-width:1130px) and (max-width:1363px){
+    .why-grid{
+        display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    }
+}
+@media (min-width: 1013px) and (max-width: 1130px) {
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Corrected Syntax */
+        gap: 30px;
+    }
+    .why-box{
+        height: 250px !important;
+    }
+}
+@media (min-width:768px) and (max-width: 1013px){
+    .why-box{
+        height: 250px !important;
+    }
+}
 
 /* Box Styling */
 .why-box {
@@ -437,6 +469,9 @@ body {
     }
     .why-choose p {
         font-size: 1rem;
+    }
+    .why-box{
+        height: 250px;
     }
 }
 /* @media (max-width:320px){
@@ -559,6 +594,7 @@ body {
 /* Slider Container */
 .testimonial-container {
     position: relative;
+    
     max-width: 600px;
     margin: auto;
     overflow: hidden;
@@ -595,7 +631,7 @@ body {
 .prev-btn, .next-btn {
     position: absolute;
     z-index: 10;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.2);
     color: white;
