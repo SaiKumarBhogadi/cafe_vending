@@ -1,7 +1,3 @@
-body {
-    background-color: #121212;
-    color: white;
-}
 .navbar {
     background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(255, 0, 0, 0.8));
     backdrop-filter: blur(15px);
@@ -52,6 +48,9 @@ body {
 .nav-link:hover::before {
     opacity: 1;
     transform: translateX(-5px);
+}
+.mobile-nav{
+    display: none;
 }
 
 .nav-link::after {
@@ -117,6 +116,10 @@ body {
     color: #ff0000;
     text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
 }
+
+
+
+
 
 
 
@@ -248,11 +251,12 @@ body {
 }
 
 
+
 /* About Us Section */
 .about-us {
     padding: 60px 0;
-    background-color: #1f1f1f;
-    color: white;
+    background-color: #ffffff; /* White background */
+    color: #4d2c1c; /* Deep brown for text */
     position: relative;
     overflow: hidden;
 }
@@ -262,46 +266,52 @@ body {
     margin-bottom: 20px;
     position: relative;
     animation: slideIn 1s ease-out;
+    color: #e09621; /* Orange from logo */
 }
 
-/* Zoom effect on image */
+/* Image Styling */
 .about-us .img-fluid {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
 }
 
 .about-us .img-fluid:hover {
-    transform: scale(1.05); /* Zoom effect */
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); /* Shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(77, 44, 28, 0.3); /* Brownish shadow */
 }
 
-/* Text Hover Effects */
+/* Text Styling */
 .about-us p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
     transition: color 0.3s ease;
+    color: #5a3825; /* Medium brown */
 }
 
 .about-us p:hover {
-    color: #ff0000; /* Bright color change on hover */
+    color: #e09621; /* Orange hover effect */
 }
 
-/* Button Color Change */
+/* Button Styling */
 .about-us .btn-primary {
-    background-color: #ff0000;
+    background-color: #e09621; /* Orange */
     border: none;
     padding: 12px 30px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    border-radius: 5px;
 }
 
 .about-us .btn-primary:hover {
-    background-color: #cc0000;
+    background-color: #b97417; /* Darker orange */
+    transform: scale(1.05);
 }
 
-/* Text Hover - Color and Scale Effect */
+/* Heading Hover Effect */
 .about-us h2:hover {
-    color: red; /* Yellow color for the text on hover */
+    color: #b97417;
     transform: scale(1.05);
 }
 
@@ -320,63 +330,17 @@ body {
 
 
 
-
-
-
-/* Initial Hidden State */
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal-right {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal-top {
-    opacity: 0;
-    transform: translateY(-100px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal-bottom {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Visible When in View */
-.reveal-left.visible,
-.reveal-right.visible,
-.reveal-top.visible,
-.reveal-bottom.visible {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-}
-
-
-
-
-
-
-
-
-
-
 /* Section Styling */
 .why-choose {
     padding: 80px 10%;
     text-align: center;
-    background: #121212; /* Dark background */
-    color: white;
+    background: #b4a0a03a; /* White background */
+    color: #4d2c1c; /* Dark brown text */
 }
 
 .why-choose h2 {
     font-size: 2.5rem;
-    color: #ff4d4d; /* Red highlight */
+    color: #e09621; /* Orange highlight */
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -387,7 +351,7 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: #ff4d4d;
+    background: #e09621; /* Matching the logo theme */
     margin: 10px auto;
 }
 
@@ -395,7 +359,7 @@ body {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 40px auto;
-    color: #bdbdbd; /* Light gray text */
+    color: #5a3825; /* Medium brown text */
 }
 
 /* Grid Layout */
@@ -404,32 +368,31 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
-@media (min-width:1130px) and (max-width:1363px){
-    .why-grid{
-        display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+
+@media (min-width:1130px) and (max-width:1363px) {
+    .why-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+
 @media (min-width: 1013px) and (max-width: 1130px) {
     .why-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Corrected Syntax */
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .why-box{
+    .why-box {
         height: 250px !important;
     }
 }
-@media (min-width:768px) and (max-width: 1013px){
-    .why-box{
+
+@media (min-width:768px) and (max-width: 1013px) {
+    .why-box {
         height: 250px !important;
     }
 }
 
 /* Box Styling */
 .why-box {
-    background: #1f1f1f; /* Dark gray card */
+    background: #f8f1e7; /* Light beige for contrast */
     padding: 30px;
     height: 300px;
     border-radius: 10px;
@@ -437,29 +400,31 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    border: 2px solid #e09621; /* Orange border */
 }
 
 .why-box i {
     font-size: 2.5rem;
-    color: #ff4d4d;
+    color: #e09621; /* Orange icons */
     margin-bottom: 15px;
 }
 
 .why-box h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: white;
+    color: #4d2c1c; /* Dark brown heading */
 }
 
 .why-box p {
     font-size: 1rem;
-    color: #bdbdbd;
+    color: #5a3825; /* Medium brown text */
 }
 
 /* Hover Effect */
 .why-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(255, 77, 77, 0.4);
+    box-shadow: 0px 10px 20px rgba(224, 150, 33, 0.3); /* Soft orange glow */
+    background: #fff5e6; /* Slightly lighter beige on hover */
 }
 
 /* Responsive Design */
@@ -470,15 +435,10 @@ body {
     .why-choose p {
         font-size: 1rem;
     }
-    .why-box{
+    .why-box {
         height: 250px;
     }
 }
-/* @media (max-width:320px){
-    .why-box{
-        width: 200px;
-    }
-} */
 
 
 
@@ -486,19 +446,19 @@ body {
 .services-section {
     text-align: center;
     padding: 60px 20px;
-    background-color: #1f1f1f;
-    /* background-color: #111; */
-    color: white;
+    background-color: #ffffff; /* White background */
+    color: #4d2c1c; /* Dark brown text */
 }
 
 .services-section h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #e09621; /* Orange heading */
 }
 
 .services-section p {
     font-size: 1.2rem;
-    color: #aaa;
+    color: #5a3825; /* Medium brown text */
     margin-bottom: 30px;
 }
 
@@ -520,6 +480,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    border: 2px solid #e09621; /* Orange border */
 }
 
 /* Dark Overlay */
@@ -527,7 +488,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay */
     transition: background 0.3s ease-in-out;
 }
 
@@ -538,27 +499,29 @@ body {
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;
-    border: 1px solid #ff0000;
-    color: white;
+    border: 1px solid #e09621; /* Orange border */
+    background: rgba(255, 255, 255, 0.8); /* Light background for better visibility */
+    color: #4d2c1c; /* Dark brown text */
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
     z-index: 2;
-    transition: color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Hover Effects */
 .service-box:hover {
     transform: scale(1.05);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
 .service-box:hover::after {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .service-box:hover .service-text {
-    color: #ff0000;
+    background: #e09621; /* Orange background */
+    color: white;
 }
 
 /* Responsive */
@@ -576,25 +539,23 @@ body {
 
 
 
-
 /* Section Styling */
 .testimonials {
     text-align: center;
     padding: 60px 20px;
-    background-color: #111;
-    color: white;
-   
+    background-color: #ffffff; /* White background */
+    color: #4d2c1c; /* Dark brown text */
 }
 
 .testimonials h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #e09621; /* Orange heading */
 }
 
 /* Slider Container */
 .testimonial-container {
     position: relative;
-    
     max-width: 600px;
     margin: auto;
     overflow: hidden;
@@ -610,31 +571,32 @@ body {
 .testimonial {
     min-width: 100%;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 163, 72, 0.15); /* Light orange background */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(224, 150, 33, 0.3); /* Orange glow */
+    border: 2px solid #e09621; /* Orange border */
 }
 
 .testimonial p {
     font-size: 1.2rem;
-    color: #ddd;
+    color: #5a3825; /* Medium brown text */
     font-style: italic;
 }
 
 .testimonial h4 {
     margin-top: 15px;
     font-size: 1.1rem;
-    color: #cc0000;
+    color: #e09621; /* Orange name text */
 }
 
 /* Navigation Buttons */
 .prev-btn, .next-btn {
     position: absolute;
     z-index: 10;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: rgba(224, 150, 33, 0.2); /* Light orange */
+    color: #4d2c1c; /* Dark brown */
     border: none;
     padding: 10px 15px;
     font-size: 24px;
@@ -644,8 +606,8 @@ body {
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background: #cc0000;
-    color: black;
+    background: #e09621; /* Orange hover */
+    color: white;
 }
 
 .prev-btn {
@@ -673,45 +635,68 @@ body {
 
 
 
+
+/* Section Styling */
 .partners-contact-wrapper {
-    /* background: #1a1a1a; */
-    color: #fff;
+    color: #4d2c1c; /* Dark brown text */
     padding: 60px 0;
-    background-image: url(./images/bg-2.jpg);
+    background: #b4a0a03a; /* White background */
+    /* background-image: url(./images/bg-2.jpg); */
+    background-size: cover;
+    background-position: center;
 }
+
+/* Container */
 .custom-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* Flexbox Layout */
 .custom-flex-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
+
+/* Columns */
 .custom-col {
     flex: 1;
     min-width: 320px;
     text-align: center;
 }
+
+/* Section Titles */
 .custom-title {
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: #e09621; /* Orange title */
 }
+
+/* Partners Grid */
 .partners-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
 }
+
+/* Partner Logos */
 .partner-logo {
     width: 120px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(30%);
+    border-radius: 8px;
 }
+
 .partner-logo:hover {
     transform: scale(1.1);
+    filter: grayscale(0%);
 }
+
+/* Contact Form */
 .custom-form {
     display: flex;
     flex-direction: column;
@@ -719,30 +704,44 @@ body {
     max-width: 400px;
     margin: 0 auto;
 }
+
+/* Form Fields */
 .custom-form-group {
     width: 100%;
     margin-bottom: 15px;
 }
+
 input, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
-    border: none;
-    background: #333;
-    color: #fff;
+    border: 1px solid #e09621; /* Orange border */
+    background: #fff5e6; /* Light orange background */
+    color: #4d2c1c; /* Dark brown text */
+    font-size: 16px;
 }
+
+input::placeholder, textarea::placeholder {
+    color: #8c5a3c; /* Soft brown */
+}
+
+/* Submit Button */
 .custom-btn-submit {
-    background: #ff6600;
+    background: #e09621; /* Orange button */
     color: white;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     transition: 0.3s;
+    font-weight: bold;
 }
+
 .custom-btn-submit:hover {
-    background: #cc5200;
+    background: #cc5200; /* Darker orange */
 }
+
+/* Responsive */
 @media (max-width: 768px) {
     .custom-flex-row {
         flex-direction: column;
@@ -750,12 +749,9 @@ input, textarea {
     .partners-grid {
         justify-content: center;
     }
-}
-@media (max-width: 768px){
     input, textarea {
-        width: 80%;
-}
-
+        width: 90%;
+    }
 }
 
 
@@ -844,4 +840,43 @@ input, textarea {
         flex-direction: column;
         text-align: center;
     }
+}
+
+
+
+
+
+
+/* Initial Hidden State */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-top {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-bottom {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible When in View */
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-top.visible,
+.reveal-bottom.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
 }
